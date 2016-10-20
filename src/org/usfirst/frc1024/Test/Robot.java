@@ -160,10 +160,6 @@ public class Robot extends IterativeRobot {
 		//SmartDashboard.putNumber("Gyrospeed", RobotMap.gyrospeed.getRate());
 		SmartDashboard.putNumber("Ultra", RobotMap.Ultra.getRangeInches());
 		SmartDashboard.putNumber("Ping", RobotMap.Ultrasonic.getVoltage());
-		//I made a change here!
-		
-		
-		//I made more changes!!!
 	}
 
 	/**
