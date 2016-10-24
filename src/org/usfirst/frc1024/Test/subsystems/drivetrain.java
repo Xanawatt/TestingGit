@@ -12,10 +12,6 @@
 package org.usfirst.frc1024.Test.subsystems;
 
 import org.usfirst.frc1024.Test.RobotMap;
-import org.usfirst.frc1024.Test.commands.*;
-
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
