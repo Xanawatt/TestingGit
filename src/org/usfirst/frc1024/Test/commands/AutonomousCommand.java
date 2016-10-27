@@ -12,7 +12,6 @@
 package org.usfirst.frc1024.Test.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc1024.Test.Robot;
 
 /**
  *

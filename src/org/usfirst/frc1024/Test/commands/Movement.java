@@ -1,5 +1,6 @@
 package org.usfirst.frc1024.Test.commands;
 
+import org.usfirst.frc1024.Test.Robot;
 import org.usfirst.frc1024.Test.RobotMap;
 import org.usfirst.frc1024.Test.subsystems.drivetrain;
 
@@ -15,18 +16,21 @@ public class Movement {
 		while(RobotMap.leftEncoder.getDistance() < ticks){
 			Movement.drive(power, power);
 		}
-		Movement.drive(power, power);
+		Movement.drive(0, 0);
 	}
-	public static void driveForSeconds(int time, double power){
+	public static void driveStraightSeconds(int time, double power){
 		Movement.drive(power, power);
 		Timer.delay(time);
-		Movement.drive(power, power);
+		Movement.drive(0, 0);
 	}
-	public static void driveForInches(int inches, double power){
+	public static void driveStraightInches(int inches, double power){
 		int ticks = (int) ((500*inches)/Math.PI)*12;
 		while(RobotMap.leftEncoder.getDistance() < ticks){
-			Movement.drive(power, power);
+			double angle = RobotMap.gyro.getAngle();
+			RobotMap.myRobot.drive(power, -angle * Robot.kp);
+			Timer.delay(0.004);
 		}
+		RobotMap.myRobot.drive(0, 0);
 	}
 	public static void driveToAngle(double angle, double power){
 		double gyroAngle = RobotMap.gyro.getAngle();
@@ -38,6 +42,7 @@ public class Movement {
 				Movement.drive(-1, 1);
 			}
 		}
+		Movement.drive(0, 0);
 	}
 	//Method for going in a specific direction with Mecanum wheels.
 	//When implementing, assign the 4 values accordingly.
